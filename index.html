@@ -1,0 +1,302 @@
+<!DOCTYPE html>     
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School-Parent Apps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #ff3333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .menu-icon {
+            cursor: pointer;
+        }
+        .header img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        .notifications {
+            background-color: #e60000;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+        .notifications button {
+            background-color: white;
+            color: #e60000;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .main-content {
+            text-align: center;
+        }
+        .slider {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .stories {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #e0f7fa;
+        }
+        .story img {
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            cursor: pointer;
+        }
+        .tools {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .tool {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+        }
+        .tool:hover {
+            background-color: #e0e0e0;
+            transform: scale(1.05);
+        }
+        .tool img {
+            max-width: 50px;
+            margin-bottom: 10px;
+        }
+        .tool h4 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="menu-icon" onclick="openNav()">
+            <span>☰</span>
+        </div>
+        <div>
+            <h2>Satyam Singh Yadav</h2>
+            <p>(Class-XII Non medical)</p>
+        </div>
+        <a href="https://ssybrand.github.io/Candidate-details-/"><img src="https://i.ibb.co/5RVb59S/1000265822-removebg-preview.png" alt="Profile Picture"></a>
+    </div>
+
+    <div class="notifications">
+        <h3>3 Urgent Notifications</h3>
+        <button onclick="window.location.href='https://ssybrand.github.io/Notification-class-on-app/'">View</button>
+    </div>
+
+    <div class="main-content">
+        <div class="slider">
+            <div class="slides">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGYSIDvTRwAXETUG6Uy91v7OV81kbilnuh7Q&usqp=CAU" alt="School Bus 1">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW1knZyGV6OW5tPCeiScUF_AXj3uouojeojQ&usqp=CAU" alt="School Bus 2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvwAhY7_yxxb8CdsK0A_Lxi8UtUDT7yhelFYNq7T35xbJ-B5snn_um0IA&s=10" alt="School Bus 3">
+            </div>
+        </div>
+    </div>
+
+    <br><center><font color="black" size="5"><strong>Our School Story 💞</strong></font></center>
+    <div class="stories">
+        <div class="story"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-fvd1VAfAKvQyaxFZLKn0WjAKoovt3ilKsv5yqZjqDPe2htLwpCYTEJU&s=10" alt="Story 1" onclick="viewStory(this.src)"></div>
+        <div class="story"><img src="https://res.cloudinary.com/dsmwdwzx0/image/upload/q_auto/photo-gallery/whatsapp-image-2023-04-28-at-1.17.44-pm-(4)-1682691783.jpeg" alt="Story 2" onclick="viewStory(this.src)"></div>
+        <div class="story"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3EBSn7RMP6vN7S1M6u_JzcyFiwrmbaW-rMpEPteNsp9MC0SxjcPidRY&s=10" alt="Story 3" onclick="viewStory(this.src)"></div>
+        <div class="story"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXiX6-s_Cgmsj0iQNQ1LAhOdJQ94AyX1hwpoqkGxnekSJT5BABfZi-Mea-&s=10" alt="Story 4" onclick="viewStory(this.src)"></div>
+    </div>
+    <hr color=yellow>
+<center><h2>Class Room tools </h2></center>
+    <hr color=yellow>
+    <div class="tools">
+       <div class="tool" onclick="window.location.href='https://ssybrand.github.io/Attendance-apps/'">
+            <img src="https://cdn-icons-png.flaticon.com/128/1582/1582043.png" alt="Attendance Icon">
+            <h4>Attendance</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='homework.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/2113/2113866.png" alt="Homework Icon">
+            <h4>Homework</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='booklist.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/5833/5833290.png" alt="Book List Icon">
+            <h4>Book List</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='syllabus.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/11686/11686911.png" alt="Syllabus Icon">
+            <h4>Syllabus</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='gallery.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/8418/8418513.png" alt="Gallery Icon">
+            <h4>Gallery</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='calendar.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/591/591576.png" alt="Calendar Icon">
+            <h4>Calendar</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='greetings.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/3100/3100024.png" alt="Greetings Icon">
+            <h4>Greetings</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='onlinetests.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/7688/7688747.png" alt="Online Tests Icon">
+            <h4>Online Tests</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='newsboard.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/2540/2540832.png" alt="Newsboard Icon">
+            <h4>Newsboard</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='datesheet.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/11523/11523590.png" alt="Datesheet Icon">
+            <h4>Datesheet</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='holidayhomework.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/3403/3403504.png" alt="Holiday Homework Icon">
+            <h4>Holiday Homework</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='elearning.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/3221/3221624.png" alt="E-Learning Icon">
+            <h4>E-Learning</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='liveclass.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/3214/3214781.png" alt="Live Class Icon">
+            <h4>Live Class</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='gatepass.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/12757/12757698.png" alt="Gatepass Icon">
+            <h4>Gatepass</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='studymaterial.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/4541/4541151.png" alt="Study Material Icon">
+            <h4>Study Material</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='van.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/3063/3063823.png" alt="Van Icon">
+            <h4>Van</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='classtest.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/11806/11806740.png" alt="Class Test Icon">
+            <h4>Class Test</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='feedetails.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/10771/10771708.png" alt="Fee Details Icon">
+            <h4>Fee Details</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='dictionary.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/4033/4033369.png" alt="Dictionary Icon">
+            <h4>Dictionary</h4>
+        </div>
+        <div class="tool" onclick="window.location.href='thoughts.html'">
+            <img src="https://cdn-icons-png.flaticon.com/128/10403/10403642.png" alt="Thoughts Icon">
+            <h4>Thoughts</h4>
+        </div>
+
+    </div>
+
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <h2 style="color: blue; text-align: center;"><strong>S.R Memorial School Prayagraj</strong></h2>
+        <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_EsD9S3tDSr0mavSVSh25HnUQDyI22qfzLw&usqp=CAU" width="85%"></center>
+        <br>
+        <p style="color: white; font-size: 20px;">
+            Address: Devprayag Technical Campus, Lucknow Rd<br>
+            Contact Number: +913837383738<br>
+            WhatsApp No: +91 4847383838<br>
+            Enroll in Admission 2025-26:
+        </p>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+
+        let currentIndex = 0;
+        const slides = document.querySelector('.slides');
+        const totalSlides = slides.children.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+
+        function viewStory(src) {
+            const newWindow = window.open("", "_blank");
+            newWindow.document.write(`<img src="${src}" style="width:100%">`);
+        }
+    </script>
+    <hr color=aqua>
+    <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr89ucA0v3YoGemH_eqLUzvi7lfOjqqMRFaA&usqp=CAU" width="95%"></center>
+    
+<hr color=aqua>
+</body>
+</html>
